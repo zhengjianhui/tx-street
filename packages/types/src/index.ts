@@ -1,0 +1,1 @@
+export const TYPES_EXAMPLE = 'TYPES_EXAMPLE';
