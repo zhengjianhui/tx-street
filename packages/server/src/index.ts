@@ -1,15 +1,19 @@
-import path from 'path';
 import * as dotenv from 'dotenv';
 import Koa from 'koa';
-import parser from 'koa-bodyparser';
 import json from 'koa-json';
 import logger from 'koa-logger';
 import KoaRouter from 'koa-router';
+import parser from 'koa-bodyparser';
 import koaStatic from 'koa-static';
+import path from 'path';
+import { runWebsocket } from './websocket';
+import { WebSocket } from 'ws';
 
 dotenv.config({
   path: path.join(__dirname, '../../../', '.env'),
 });
+
+runWebsocket();
 
 const app: Koa = new Koa();
 
